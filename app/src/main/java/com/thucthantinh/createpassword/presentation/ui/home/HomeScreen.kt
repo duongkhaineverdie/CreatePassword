@@ -78,7 +78,7 @@ fun HomeScreen(navController: NavHostController) {
         generatedPassword = uiState.passwordGenerated,
         onClickCopy = {
             Constants.copyToClipboard(it, context)
-            Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, context.getText(R.string.copied), Toast.LENGTH_SHORT).show()
         },
         onClickSavePassword = homeViewModel::savePassword,
         passwords = uiState.passwords,
@@ -151,14 +151,14 @@ fun HomeScreen(
                     value = lengthPassword,
                     onValueChange = onValueLengthChange,
                     modifier = Modifier.fillMaxWidth(),
-                    label = { Text(text = "Password length", fontSize = 16.sp) },
+                    label = { Text(text = stringResource(id = R.string.password_length), fontSize = 16.sp) },
                     isError = isErrorField,
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Number
                     ),
                     supportingText = {
                         if (isErrorField) Text(
-                            text = "Input 6 -> 16",
+                            text = stringResource(id = R.string.input_error_message),
                             fontSize = 14.sp
                         )
                     }
@@ -175,7 +175,7 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Lower Text",
+                        text = stringResource(id = R.string.lower_text_label),
                         style = MaterialTheme.typography.titleMedium
                     )
                     Checkbox(
@@ -189,7 +189,7 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Upper Text",
+                        text = stringResource(id = R.string.upper_text_label),
                         style = MaterialTheme.typography.titleMedium
                     )
                     Checkbox(
@@ -204,7 +204,7 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Number",
+                        text = stringResource(id = R.string.number_label),
                         style = MaterialTheme.typography.titleMedium
                     )
                     Checkbox(
@@ -218,7 +218,7 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Special Char",
+                        text = stringResource(id = R.string.special_char),
                         style = MaterialTheme.typography.titleMedium
                     )
                     Checkbox(
@@ -229,9 +229,9 @@ fun HomeScreen(
             }
 
             Button(onClick = onClickGeneratePassword) {
-                Icon(Icons.Filled.Check, contentDescription = "Generate Password")
+                Icon(Icons.Filled.Check, contentDescription = stringResource(id = R.string.generate_password_title_button))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text(text = "Generate Password")
+                Text(text = stringResource(id = R.string.generate_password_title_button))
             }
 
             if (generatedPassword.isNotBlank()) {
@@ -305,7 +305,7 @@ fun HomeScreen(
         ) {
             Text(
                 modifier = Modifier.padding(vertical = 5.dp),
-                text = "Save passwords",
+                text = stringResource(id = R.string.save_password),
                 style = MaterialTheme.typography.titleLarge
             )
             HorizontalDivider(
@@ -348,7 +348,7 @@ fun HomeScreen(
                     }
                 }
             } else {
-                Text(modifier = Modifier.padding(top = 20.dp), text = "Empty List")
+                Text(modifier = Modifier.padding(top = 20.dp), text = stringResource(id = R.string.empty_list))
             }
         }
 

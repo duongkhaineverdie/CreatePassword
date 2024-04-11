@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Create Password</string>
+    <string name="app_name">Random Password</string>
     <string name="copied">Copied!</string>
     <string name="save_password">Save passwords</string>
     <string name="empty_list">Empty List</string>

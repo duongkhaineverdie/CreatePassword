@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CreatePassword"
+rootProject.name = "RandomPassword"
 include(":app")
  

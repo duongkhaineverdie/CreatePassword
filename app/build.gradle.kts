@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.thucthantinh.createpassword"
+    namespace = "com.emenike.createpassword"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.thucthantinh.createpassword"
+        applicationId = "com.emenike.createpassword"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
